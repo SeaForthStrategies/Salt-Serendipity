@@ -1,4 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Salt & Serendipity
+
+## Connect the email list
+
+The signup form posts subscriber data to `EMAIL_LIST_WEBHOOK_URL`.
+
+1. Create a webhook in your email platform or automation tool. Zapier and Make can receive the webhook and add the email to Mailchimp, Kit, Flodesk, Klaviyo, or another provider.
+2. Copy `.env.example` to `.env.local`.
+3. Set `EMAIL_LIST_WEBHOOK_URL` to the webhook URL.
+4. Optionally set `EMAIL_LIST_WEBHOOK_TOKEN` if the webhook requires bearer authentication.
+5. Restart `npm run dev`.
+
+The webhook receives:
+
+```json
+{
+  "name": "Abby",
+  "email": "member@example.com",
+  "source": "salt-and-serendipity-website",
+  "subscribedAt": "ISO timestamp"
+}
+```
 
 ## Getting Started
 

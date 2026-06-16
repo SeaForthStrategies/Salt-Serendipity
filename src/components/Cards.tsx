@@ -1,0 +1,3 @@
+export function ExperienceCard({ index, title, detail, meta, delay = 0 }: { index: string; title: string; detail: string; meta: string; delay?: number }) {
+  return <article data-reveal="row" style={{ "--reveal-delay": `${delay}ms` } as React.CSSProperties} className="group grid gap-4 border-t border-navy/20 py-7 transition-colors hover:border-navy md:grid-cols-[60px_1.1fr_1fr_170px] md:items-center md:gap-8 md:py-8"><span className="text-xs text-navy/40">{index}</span><h3 className="text-xl font-medium tracking-[-.025em] md:text-2xl">{title}</h3><p className="max-w-md text-sm leading-6 text-navy/55">{detail}</p><span className="text-[10px] font-semibold uppercase tracking-[.16em] text-navy/50 md:text-right">{meta}</span></article>;
+}
