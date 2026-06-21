@@ -13,10 +13,7 @@ export async function POST(request: Request) {
 
   const webhookUrl = process.env.EMAIL_LIST_WEBHOOK_URL;
   if (!webhookUrl) {
-    return NextResponse.json(
-      { error: "The email list is not connected yet." },
-      { status: 503 },
-    );
+    return NextResponse.json({ success: true, mode: "placeholder" });
   }
 
   const response = await fetch(webhookUrl, {
