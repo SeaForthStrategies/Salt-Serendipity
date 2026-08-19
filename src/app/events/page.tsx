@@ -7,76 +7,74 @@ export const dynamic = "force-dynamic";
 
 const events = [
   {
-    date: "2026-08-22",
-    label: "Sat, Aug 22",
-    title: "Good People Walk Club",
-    tag: "Free · Easy first event",
-    detail: "A coastal walk, coffee after, and simple intros for ambitious people who want more real-life plans on the calendar.",
-    promise: "Leave with one new friend, one useful connection, and a better Saturday morning.",
-    spots: "Open invite",
-  },
-  {
-    date: "2026-08-26",
-    label: "Wed, Aug 26",
-    title: "Ship It Night",
-    tag: "Work club · 12 seats",
-    detail: "Bring the idea you keep talking about and spend 90 minutes moving it forward beside other people who are building too.",
-    promise: "Walk out with one thing shipped, posted, emailed, booked, or launched.",
-    spots: "Limited seats",
-  },
-  {
-    date: "2026-09-05",
-    label: "Sat, Sep 5",
-    title: "The Serendipity Dinner",
-    tag: "Curated dinner · 10 seats",
-    detail: "A small coastal dinner for founders, creatives, operators, and people in their build-something era.",
-    promise: "No stiff networking. Just smart people, good questions, and the kind of room where ideas get better.",
-    spots: "Application-style invite",
-  },
-  {
-    date: "2026-09-09",
-    label: "Wed, Sep 9",
-    title: "Coffee Shop Builders",
-    tag: "Cowork · 16 seats",
-    detail: "A focused midweek session at a coastal coffee shop for getting out of your apartment and back into motion.",
-    promise: "Bring one goal. Leave with progress, accountability, and a few people to cheer it on.",
-    spots: "Limited seats",
-  },
-  {
-    date: "2026-09-19",
-    label: "Sat, Sep 19",
-    title: "Miles & Matcha",
-    tag: "Walk/run · Free",
-    detail: "Walk or easy run, then matcha/coffee after. Built for people who want health, ambition, and social life to stop living in separate tabs.",
-    promise: "The easiest yes on the calendar: move your body, meet good people, get on with your day.",
-    spots: "Open invite",
-  },
-  {
-    date: "2026-09-23",
-    label: "Wed, Sep 23",
-    title: "The Ask Night",
-    tag: "Connection night · 20 seats",
-    detail: "Everyone brings one ask and one offer. Hiring, intros, feedback, cofounder energy, event ideas, creative help, whatever is real.",
-    promise: "A practical room for making useful serendipity happen faster.",
-    spots: "Limited seats",
-  },
-  {
     date: "2026-10-03",
     label: "Sat, Oct 3",
-    title: "Bonfire & Big Ideas",
-    tag: "Beach social · Open invite",
-    detail: "A low-pressure coastal hang with one tiny rule: bring a friend and one thing you are excited to build next.",
-    promise: "Good people, warm fire, easy conversations, and the kind of night that turns into a group chat.",
-    spots: "Open invite",
+    title: "Beach & Brainstorm",
+    tag: "Beach circles · 30-40 people",
+    detail: "A sunset beach meetup for founders, business owners, creators, marketers, developers, freelancers, and people with ideas. Request to RSVP by sharing what you are building, what you are good at, and what you need help with.",
+    promise: "Leave with new ideas, feedback, potential collaborators, and at least one useful introduction.",
+    serendipity: "When you arrive, you get a quiet 'you should find...' prompt for 1-2 people we think you should meet.",
+    spots: "Request to RSVP",
   },
   {
-    date: "2026-10-07",
-    label: "Wed, Oct 7",
-    title: "No More Notes App",
-    tag: "Action night · 12 seats",
-    detail: "For the ideas sitting in your Notes app. We pick one, simplify it, and take the first public step before the night ends.",
-    promise: "Because momentum converts better than overthinking.",
-    spots: "Limited seats",
+    date: "2026-10-15",
+    label: "Thu, Oct 15",
+    title: "The Happy Hour",
+    tag: "Curated room · 40-60 people",
+    detail: "Not a networking happy hour. A curated San Diego room of interesting people across tech, fitness, hospitality, fashion, media, startups, and creative work.",
+    promise: "Expand your social and professional circle without walking into a room full of people handing out business cards.",
+    serendipity: "Everyone receives three initials at arrival. Somewhere in the room are three people specifically selected for them to meet.",
+    spots: "Request to RSVP",
+  },
+  {
+    date: "2026-11-01",
+    label: "Sun, Nov 1",
+    title: "Run Into Someone",
+    tag: "Run/walk club · 40-60 people",
+    detail: "A Salt & Serendipity run club designed around meeting people, not pace. Choose the 3-mile run or 1.5-mile walk, rotate groups, then finish together at coffee or brunch.",
+    promise: "Movement, community, and meeting new people without the pressure of a formal social event.",
+    serendipity: "Your starting group is intentionally selected around something you all have in common. At coffee, we reveal it.",
+    spots: "Request to RSVP",
+  },
+  {
+    date: "2026-11-14",
+    label: "Sat, Nov 14",
+    title: "Build Something Together",
+    tag: "Team challenge · 25-40 people",
+    detail: "Guests request to attend by sharing their skills: design, marketing, engineering, sales, photography, content, finance, operations, and more. Then we form teams and give each group 90 minutes to create a business people would actually use.",
+    promise: "Meet people by actually working with them instead of making small talk. You immediately discover who you click with creatively.",
+    serendipity: "Nobody knows their team ahead of time. The room is mixed intentionally, then the magic happens live.",
+    spots: "Request to RSVP",
+  },
+  {
+    date: "2026-11-25",
+    label: "Wed, Nov 25",
+    title: "The Dinner Table",
+    tag: "One table · 20-30 people",
+    detail: "An intimate Salt & Serendipity dinner with one table, curated guests, and no sitting only with whoever you came with. Each course introduces a different real conversation question.",
+    promise: "Create actual friendships instead of collecting contacts.",
+    serendipity: "Seating changes once during the evening based on who we think should meet.",
+    spots: "Request to RSVP",
+  },
+  {
+    date: "2026-12-12",
+    label: "Sat, Dec 12",
+    title: "Give & Get",
+    tag: "Hidden matches · 35-50 people",
+    detail: "Everyone submits two things before the event: something they can give and something they need. We curate the room around where people's strengths and needs overlap.",
+    promise: "Everyone should leave having either helped someone or gotten meaningful help themselves.",
+    serendipity: "Nobody gets a directory. You discover the hidden matches throughout the room.",
+    spots: "Request to RSVP",
+  },
+  {
+    date: "2026-12-27",
+    label: "Sun, Dec 27",
+    title: "The Reset Club",
+    tag: "Year-end reset · 25-40 people",
+    detail: "Coffee, music, notebooks, planning, and vision boards, structured around accountability and connection instead of just pretty Pinterest boards.",
+    promise: "Leave with actual direction for 2027 and people who can be part of it.",
+    serendipity: "Everyone gets a 2027 connection chosen for them based on goals, projects, and the life they are building next.",
+    spots: "Request to RSVP",
   },
 ];
 
@@ -104,7 +102,7 @@ export default function EventsPage() {
         <MotionReveal>
           <p className="eyebrow">Salt &amp; Serendipity events</p>
           <h1>Make plans that<br /><span className="serif">move your life.</span></h1>
-          <p>Coastal walks, work nights, dinners, and tiny rooms where ambitious people become real friends.</p>
+          <p>Curated gatherings where the right people end up in the same place, and what happens next is serendipity.</p>
           <div className="events-hero-actions">
             <Link className="button" href="/#join-list">Get invited</Link>
             <Link className="button button-ghost" href="/partners">Host with us</Link>
@@ -124,6 +122,7 @@ export default function EventsPage() {
           <div className="events-feature-side">
             <span>{featuredEvent.tag}</span>
             <p>{featuredEvent.promise}</p>
+            <p className="events-serendipity">{featuredEvent.serendipity}</p>
             <b className="events-rsvp">RSVP coming soon</b>
             <Link className="events-list-link" href="/#join-list">Join the list for first access</Link>
           </div>
@@ -135,7 +134,7 @@ export default function EventsPage() {
       <div className="shell">
         <MotionReveal className="events-section-head">
           <p className="eyebrow">Upcoming</p>
-          <h2>Every other Saturday.<br /><span className="serif">Wednesdays in between.</span></h2>
+          <h2>Request to RSVP.<br /><span className="serif">We curate the room.</span></h2>
         </MotionReveal>
         {remainingEvents.length > 0 ? <div className="events-list">
           {remainingEvents.map((event, index) => (
@@ -146,6 +145,7 @@ export default function EventsPage() {
                 <h3>{event.title}</h3>
                 <p>{event.detail}</p>
                 <p className="events-promise">{event.promise}</p>
+                <p className="events-serendipity">{event.serendipity}</p>
               </div>
               <div className="events-row-action">
                 <b>{event.spots}</b>
