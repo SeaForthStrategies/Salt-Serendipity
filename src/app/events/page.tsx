@@ -5,7 +5,7 @@ import { MotionReveal } from "@/components/MotionReveal";
 
 export const metadata: Metadata = {
   title: "Beach & Brainstorm | Salt & Serendipity Events",
-  description: "Beach & Brainstorm is an approved-RSVP Salt & Serendipity gathering in La Jolla for ideas, connections, and possibility.",
+  description: "Beach & Brainstorm is an approved-RSVP Salt & Serendipity gathering in Encinitas for ideas, connections, and possibility.",
 };
 
 export default function EventsPage() {
@@ -24,9 +24,9 @@ export default function EventsPage() {
           <p className="event-drop-lede">A curated beach hang for people building things, chasing ideas, and wanting to meet the kind of people who make life more interesting.</p>
 
           <div className="event-drop-details" aria-label="Event details">
-            <span>Date TBD</span>
+            <span>Oct 3</span>
             <span>2-5 PM</span>
-            <span>La Jolla</span>
+            <span>Encinitas</span>
             <span>Approved RSVP required</span>
           </div>
 
