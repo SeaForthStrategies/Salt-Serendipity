@@ -8,17 +8,19 @@ export const dynamic = "force-dynamic";
 const events = [
   {
     date: "2026-10-03",
-    label: "Sat, Oct 3",
+    label: "Sat, Oct 3 · 2-5 PM",
     title: "Beach & Brainstorm",
+    location: "La Jolla",
+    status: "Approved RSVP required",
     tag: "Beach circles · 30-40 people",
-    detail: "A sunset beach meetup for founders, business owners, creators, marketers, developers, freelancers, and people with ideas. Request to RSVP by sharing what you are building, what you are good at, and what you need help with.",
+    detail: "A La Jolla beach meetup for founders, business owners, creators, marketers, developers, freelancers, and people with ideas. Request to RSVP by sharing what you are building, what you are good at, and what you need help with.",
     promise: "Leave with new ideas, feedback, potential collaborators, and at least one useful introduction.",
     serendipity: "When you arrive, you get a quiet 'you should find...' prompt for 1-2 people we think you should meet.",
     spots: "Request to RSVP",
   },
   {
     date: "2026-10-15",
-    label: "Thu, Oct 15",
+    label: "Date TBD · Time TBD",
     title: "The Happy Hour",
     tag: "Curated room · 40-60 people",
     detail: "Not a networking happy hour. A curated San Diego room of interesting people across tech, fitness, hospitality, fashion, media, startups, and creative work.",
@@ -28,7 +30,7 @@ const events = [
   },
   {
     date: "2026-11-01",
-    label: "Sun, Nov 1",
+    label: "Date TBD · Time TBD",
     title: "Run Into Someone",
     tag: "Run/walk club · 40-60 people",
     detail: "A Salt & Serendipity run club designed around meeting people, not pace. Choose the 3-mile run or 1.5-mile walk, rotate groups, then finish together at coffee or brunch.",
@@ -38,7 +40,7 @@ const events = [
   },
   {
     date: "2026-11-14",
-    label: "Sat, Nov 14",
+    label: "Date TBD · Time TBD",
     title: "Build Something Together",
     tag: "Team challenge · 25-40 people",
     detail: "Guests request to attend by sharing their skills: design, marketing, engineering, sales, photography, content, finance, operations, and more. Then we form teams and give each group 90 minutes to create a business people would actually use.",
@@ -48,7 +50,7 @@ const events = [
   },
   {
     date: "2026-11-25",
-    label: "Wed, Nov 25",
+    label: "Date TBD · Time TBD",
     title: "The Dinner Table",
     tag: "One table · 20-30 people",
     detail: "An intimate Salt & Serendipity dinner with one table, curated guests, and no sitting only with whoever you came with. Each course introduces a different real conversation question.",
@@ -58,7 +60,7 @@ const events = [
   },
   {
     date: "2026-12-12",
-    label: "Sat, Dec 12",
+    label: "Date TBD · Time TBD",
     title: "Give & Get",
     tag: "Hidden matches · 35-50 people",
     detail: "Everyone submits two things before the event: something they can give and something they need. We curate the room around where people's strengths and needs overlap.",
@@ -68,7 +70,7 @@ const events = [
   },
   {
     date: "2026-12-27",
-    label: "Sun, Dec 27",
+    label: "Date TBD · Time TBD",
     title: "The Reset Club",
     tag: "Year-end reset · 25-40 people",
     detail: "Coffee, music, notebooks, planning, and vision boards, structured around accountability and connection instead of just pretty Pinterest boards.",
@@ -116,6 +118,7 @@ export default function EventsPage() {
         <MotionReveal className="events-feature-convert-card">
           <div>
             <p className="eyebrow">Next up · {featuredEvent.label}</p>
+            {featuredEvent.location ? <p className="events-meta">{featuredEvent.location} · {featuredEvent.status}</p> : null}
             <h2>{featuredEvent.title}</h2>
             <p>{featuredEvent.detail}</p>
           </div>
@@ -123,7 +126,7 @@ export default function EventsPage() {
             <span>{featuredEvent.tag}</span>
             <p>{featuredEvent.promise}</p>
             <p className="events-serendipity">{featuredEvent.serendipity}</p>
-            <b className="events-rsvp">RSVP coming soon</b>
+            <b className="events-rsvp">{featuredEvent.status ?? "RSVP coming soon"}</b>
             <Link className="events-list-link" href="/#join-list">Join the list for first access</Link>
           </div>
         </MotionReveal>
@@ -142,6 +145,7 @@ export default function EventsPage() {
               <span>{event.label}</span>
               <div>
                 <p className="events-tag">{event.tag}</p>
+                {event.location ? <p className="events-meta">{event.location} · {event.status}</p> : null}
                 <h3>{event.title}</h3>
                 <p>{event.detail}</p>
                 <p className="events-promise">{event.promise}</p>

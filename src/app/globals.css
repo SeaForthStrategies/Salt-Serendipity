@@ -386,3 +386,7 @@ body { background:#f7f5f2; }
 .events-serendipity { border-left:2px solid rgba(125,157,156,.7); padding-left:.9rem; font-style:italic; }
 .events-feature-side .events-serendipity { color:rgba(255,255,255,.72) !important; }
 .events-row .events-serendipity { max-width:38rem; color:rgba(14,34,56,.62) !important; }
+
+.events-meta { margin-top:.65rem !important; color:#193a5a !important; font-size:.72rem !important; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+.events-feature-convert-card .events-meta { max-width:none; }
+.events-row .events-meta { margin-bottom:.75rem; }
