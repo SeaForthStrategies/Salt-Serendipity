@@ -127,7 +127,31 @@ export default function EventsPage() {
             <p>{featuredEvent.promise}</p>
             <p className="events-serendipity">{featuredEvent.serendipity}</p>
             <b className="events-rsvp">{featuredEvent.status ?? "RSVP coming soon"}</b>
-            <Link className="events-list-link" href="/#join-list">Join the list for first access</Link>
+            <a className="events-list-link" href="#rsvp">Apply to RSVP</a>
+          </div>
+        </MotionReveal>
+      </div>
+    </section> : null}
+
+    {featuredEvent ? <section id="rsvp" className="events-rsvp-section">
+      <div className="shell">
+        <MotionReveal className="events-rsvp-card">
+          <div className="events-rsvp-copy">
+            <p className="eyebrow">Approved RSVP required</p>
+            <h2>Request your spot.</h2>
+            <p>Beach &amp; Brainstorm is intentionally curated so the room feels useful, fun, and actually serendipitous. Submit your RSVP request below and we&apos;ll follow up with details.</p>
+          </div>
+          <div className="events-luma-frame-wrap">
+            <iframe
+              src="https://luma.com/embed/event/evt-OpbQUFayugU1hjL/simple"
+              width="600"
+              height="450"
+              frameBorder="0"
+              allow="fullscreen; payment"
+              aria-hidden="false"
+              tabIndex={0}
+              title="Beach and Brainstorm RSVP"
+            />
           </div>
         </MotionReveal>
       </div>
