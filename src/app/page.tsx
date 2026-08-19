@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { CommunityForm } from "@/components/CommunityForm";
 import { HeroMedia } from "@/components/HeroMedia";
@@ -24,13 +23,13 @@ export default function Home() {
     </section>
 
     <section className="cute-feature">
-      <div className="shell cute-feature-grid">
-        <MotionReveal className="cute-feature-image"><Image src="/images/events/summer-social-june-21.png" alt="Salt and Serendipity Summer Social flyer" fill sizes="(min-width: 800px) 46vw, 100vw" className="object-contain" /></MotionReveal>
-        <MotionReveal delay={.08} className="cute-feature-copy"><p className="eyebrow">Next event</p><h2>Summer Social</h2><p>Sunday, June 21 · Moonlight Beach · Encinitas. Yard games, good people, BYO drinks, and beach attire encouraged.</p><Link className="button" href="/events">See details</Link></MotionReveal>
+      <div className="shell cute-feature-grid cute-feature-simple">
+        <MotionReveal className="cute-feature-note"><p className="eyebrow">Club calendar</p><h2>Plans worth<br /><span className="serif">showing up for.</span></h2></MotionReveal>
+        <MotionReveal delay={.08} className="cute-feature-copy"><p className="eyebrow">Next up</p><h2>Upcoming events</h2><p>Coastal walks, work nights, dinners, and rooms designed for good people to actually meet.</p><Link className="button" href="/events">See events</Link></MotionReveal>
       </div>
     </section>
 
-    <section className="cute-list">
+    <section className="cute-list" id="join-list">
       <div className="shell cute-list-card">
         <MotionReveal><p className="eyebrow">Join the list</p><h2>Get the next invite.</h2><p>No spam. Just events, club updates, and the occasional little nudge to go do something fun.</p></MotionReveal>
         <MotionReveal delay={.08}><CommunityForm /></MotionReveal>

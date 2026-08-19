@@ -1,105 +1,160 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import Link from "next/link";
 import { MotionReveal } from "@/components/MotionReveal";
 
 export const metadata: Metadata = { title: "Events", description: "Salt & Serendipity club events and gatherings." };
+export const dynamic = "force-dynamic";
 
-const upcomingEvents = [
+const events = [
   {
-    "date": "Sat, Aug 8",
-    "title": "Summer Send-Off Social",
-    "detail": "Beach hang, yard games, BYO drinks, and easy summer energy."
+    date: "2026-08-22",
+    label: "Sat, Aug 22",
+    title: "Good People Walk Club",
+    tag: "Free · Easy first event",
+    detail: "A coastal walk, coffee after, and simple intros for ambitious people who want more real-life plans on the calendar.",
+    promise: "Leave with one new friend, one useful connection, and a better Saturday morning.",
+    spots: "Open invite",
   },
   {
-    "date": "Wed, Aug 12",
-    "title": "Ship It Night",
-    "detail": "A casual midweek work session for finally moving the idea forward."
+    date: "2026-08-26",
+    label: "Wed, Aug 26",
+    title: "Ship It Night",
+    tag: "Work club · 12 seats",
+    detail: "Bring the idea you keep talking about and spend 90 minutes moving it forward beside other people who are building too.",
+    promise: "Walk out with one thing shipped, posted, emailed, booked, or launched.",
+    spots: "Limited seats",
   },
   {
-    "date": "Sat, Aug 22",
-    "title": "Good People Walk Club",
-    "detail": "Coastal walk, coffee after, and low-pressure introductions."
+    date: "2026-09-05",
+    label: "Sat, Sep 5",
+    title: "The Serendipity Dinner",
+    tag: "Curated dinner · 10 seats",
+    detail: "A small coastal dinner for founders, creatives, operators, and people in their build-something era.",
+    promise: "No stiff networking. Just smart people, good questions, and the kind of room where ideas get better.",
+    spots: "Application-style invite",
   },
   {
-    "date": "Wed, Aug 26",
-    "title": "Coffee Shop Builders",
-    "detail": "Bring your laptop, your current project, and one thing you need help with."
+    date: "2026-09-09",
+    label: "Wed, Sep 9",
+    title: "Coffee Shop Builders",
+    tag: "Cowork · 16 seats",
+    detail: "A focused midweek session at a coastal coffee shop for getting out of your apartment and back into motion.",
+    promise: "Bring one goal. Leave with progress, accountability, and a few people to cheer it on.",
+    spots: "Limited seats",
   },
   {
-    "date": "Sat, Sep 5",
-    "title": "The Serendipity Dinner",
-    "detail": "A small table for founders, creators, and people building cool things."
+    date: "2026-09-19",
+    label: "Sat, Sep 19",
+    title: "Miles & Matcha",
+    tag: "Walk/run · Free",
+    detail: "Walk or easy run, then matcha/coffee after. Built for people who want health, ambition, and social life to stop living in separate tabs.",
+    promise: "The easiest yes on the calendar: move your body, meet good people, get on with your day.",
+    spots: "Open invite",
   },
   {
-    "date": "Wed, Sep 9",
-    "title": "The Yes Night",
-    "detail": "A simple social built around saying yes to one new conversation."
+    date: "2026-09-23",
+    label: "Wed, Sep 23",
+    title: "The Ask Night",
+    tag: "Connection night · 20 seats",
+    detail: "Everyone brings one ask and one offer. Hiring, intros, feedback, cofounder energy, event ideas, creative help, whatever is real.",
+    promise: "A practical room for making useful serendipity happen faster.",
+    spots: "Limited seats",
   },
   {
-    "date": "Sat, Sep 19",
-    "title": "Run, Coffee, Connect",
-    "detail": "Walk or run option, then coffee and quick intros."
+    date: "2026-10-03",
+    label: "Sat, Oct 3",
+    title: "Bonfire & Big Ideas",
+    tag: "Beach social · Open invite",
+    detail: "A low-pressure coastal hang with one tiny rule: bring a friend and one thing you are excited to build next.",
+    promise: "Good people, warm fire, easy conversations, and the kind of night that turns into a group chat.",
+    spots: "Open invite",
   },
   {
-    "date": "Wed, Sep 23",
-    "title": "Coastal Cowork Club",
-    "detail": "A pretty place, focused work, and a little momentum."
+    date: "2026-10-07",
+    label: "Wed, Oct 7",
+    title: "No More Notes App",
+    tag: "Action night · 12 seats",
+    detail: "For the ideas sitting in your Notes app. We pick one, simplify it, and take the first public step before the night ends.",
+    promise: "Because momentum converts better than overthinking.",
+    spots: "Limited seats",
   },
-  {
-    "date": "Sat, Oct 3",
-    "title": "Bonfire & Big Ideas",
-    "detail": "Beach bonfire, casual hangs, and everyone brings one idea."
-  },
-  {
-    "date": "Wed, Oct 7",
-    "title": "Ship It Night",
-    "detail": "Midweek accountability for people who are tired of only talking about it."
-  }
 ];
 
+function getTodayInPacific() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Los_Angeles",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+
+  const value = (type: string) => parts.find((part) => part.type === type)?.value;
+  return [value("year"), value("month"), value("day")].join("-");
+}
+
 export default function EventsPage() {
+  const today = getTodayInPacific();
+  const upcomingEvents = events.filter((event) => event.date >= today);
+  const featuredEvent = upcomingEvents[0];
+  const remainingEvents = upcomingEvents.slice(1);
+
   return <>
     <section className="events-hero">
       <div className="shell">
         <MotionReveal>
-          <p className="eyebrow">Club calendar</p>
-          <h1>Come for the plan.<br /><span className="serif">Stay for the story.</span></h1>
-          <p>Simple coastal events for good people who like doing things in real life.</p>
+          <p className="eyebrow">Salt &amp; Serendipity events</p>
+          <h1>Make plans that<br /><span className="serif">move your life.</span></h1>
+          <p>Coastal walks, work nights, dinners, and tiny rooms where ambitious people become real friends.</p>
+          <div className="events-hero-actions">
+            <Link className="button" href="/#join-list">Get invited</Link>
+            <Link className="button button-ghost" href="/partners">Host with us</Link>
+          </div>
         </MotionReveal>
       </div>
     </section>
 
-    <section className="events-feature">
-      <div className="shell events-feature-card">
-        <MotionReveal className="events-flyer">
-          <Image src="/images/events/summer-social-june-21.png" alt="Salt and Serendipity Summer Social event flyer" fill priority sizes="(min-width: 900px) 44vw, 100vw" className="object-contain" />
-        </MotionReveal>
-        <MotionReveal delay={.08} className="events-feature-copy">
-          <p className="eyebrow">Next up · June 21</p>
-          <h2>Summer Social</h2>
-          <p>Moonlight Beach in Encinitas. Yard games, good people, BYO drinks, snacks, and beach attire encouraged.</p>
-          <a className="button" href="https://partiful.com/e/HPcVEQLhwDnpFr5b4m4B" target="_blank" rel="noreferrer">RSVP on Partiful</a>
+    {featuredEvent ? <section className="events-feature-convert">
+      <div className="shell">
+        <MotionReveal className="events-feature-convert-card">
+          <div>
+            <p className="eyebrow">Next up · {featuredEvent.label}</p>
+            <h2>{featuredEvent.title}</h2>
+            <p>{featuredEvent.detail}</p>
+          </div>
+          <div className="events-feature-side">
+            <span>{featuredEvent.tag}</span>
+            <p>{featuredEvent.promise}</p>
+            <b className="events-rsvp">RSVP coming soon</b>
+            <Link className="events-list-link" href="/#join-list">Join the list for first access</Link>
+          </div>
         </MotionReveal>
       </div>
-    </section>
+    </section> : null}
 
-    <section className="events-schedule">
+    <section className="events-schedule events-schedule-first">
       <div className="shell">
         <MotionReveal className="events-section-head">
-          <p className="eyebrow">Starting in August</p>
+          <p className="eyebrow">Upcoming</p>
           <h2>Every other Saturday.<br /><span className="serif">Wednesdays in between.</span></h2>
         </MotionReveal>
-        <div className="events-list">
-          {upcomingEvents.map((event, index) => (
-            <MotionReveal key={event.date + event.title} delay={Math.min(index * .03, .18)} className="events-row">
-              <span>{event.date}</span>
+        {remainingEvents.length > 0 ? <div className="events-list">
+          {remainingEvents.map((event, index) => (
+            <MotionReveal key={event.date + event.title} delay={Math.min(index * .03, .18)} className="events-row events-row-convert">
+              <span>{event.label}</span>
               <div>
+                <p className="events-tag">{event.tag}</p>
                 <h3>{event.title}</h3>
                 <p>{event.detail}</p>
+                <p className="events-promise">{event.promise}</p>
+              </div>
+              <div className="events-row-action">
+                <b>{event.spots}</b>
+                <span>RSVP coming soon</span>
+                <Link href="/#join-list">Get first access</Link>
               </div>
             </MotionReveal>
           ))}
-        </div>
+        </div> : <MotionReveal className="events-empty"><p className="eyebrow">More soon</p><h3>New club dates are coming.</h3><p>Join the list on the homepage and we&apos;ll send the next plans when they land.</p><Link className="button" href="/#join-list">Join the list</Link></MotionReveal>}
       </div>
     </section>
   </>;
